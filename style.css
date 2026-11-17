@@ -35,6 +35,10 @@
   --color-focus: var(--palette-navy);
   --color-border: var(--palette-mauve);
 
+  /* layout */
+  --content-max-width: 55rem;
+  --recipe-max-width: 54rem;
+
   /* spaces */
   --space-small: 0.7rem;
   --space-medium: 1rem;
@@ -55,8 +59,7 @@
   --line-height-base: 1.6;
   --line-height-list: 2;
 
-  /* layout */
-  --content-max-width: 50rem;
+
 }
 
 /* my little reset */
@@ -91,9 +94,7 @@ body {
   line-height: var(--line-height-base);
 }
 
-header {
-  padding: var(--space-page);
-}
+
 
 main {
   max-width: var(--content-max-width);
@@ -107,6 +108,16 @@ h3 {
   font-family: var(--font-family-heading);
   color: var(--color-text-heading);
   text-wrap: balance;
+}
+
+.recipe-header .recipe-container {
+  padding-block: var(--space-page);
+}
+
+.recipe-container {
+  max-inline-size: var(--recipe-max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-page);
 }
 
 .recipe-info {
@@ -131,8 +142,8 @@ h3 {
 }
 
 .recipe-content {
-  padding-inline: var(--space-page);
   padding-block-start: var(--space-section);
+
 
   > * + * {
     margin-block-start: var(--space-flow);
