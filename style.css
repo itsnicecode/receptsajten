@@ -206,10 +206,11 @@ h3 {
   }
 }
 
-footer {
+.references {
   padding: var(--space-medium);
   text-align: center;
   font-size: var(--font-size-small);
+  color: var(--color-text-muted);
 
   & a {
     color: inherit;
