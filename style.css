@@ -89,6 +89,38 @@ img {
   object-fit: cover;
 }
 
+.home-hero {
+  display: grid;
+  min-block-size: 20rem;
+}
+
+.home-hero > * {
+  grid-area: 1 / 1;
+}
+
+.home-hero > img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.home-hero-content {
+  z-index: 1;
+  align-self: end;
+  padding: var(--space-page);
+  color: var(--color-text-light);
+
+  background: linear-gradient(
+    to top,
+    rgb(from var(--palette-navy) r g b / 90%),
+    transparent
+  );
+
+  h1 {
+    color: inherit;
+  }
+}
+
 body {
   background-color: var(--color-background-page);
   color: var(--color-text-primary);
