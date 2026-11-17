@@ -119,7 +119,7 @@ body {
 
   background: linear-gradient(
     to top,
-    rgb(from var(--palette-navy) r g b / 90%),
+    rgb(from var(--palette-navy) r g b / 85%),
     transparent
   );
 
