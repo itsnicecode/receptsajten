@@ -41,6 +41,11 @@
   /* layout */
   --content-max-width: 55rem;
   --recipe-max-width: 54rem;
+  --hero-height: clamp(20rem, 45vw, 25rem);
+
+  /* links */
+  --underline-thickness: 0.2rem;
+  --underline-offset: 0.3em;
 
   /* spaces */
   --space-small: 0.7rem;
@@ -153,7 +158,8 @@ h3 {
   &:focus-visible,
   &[aria-current="page"] {
     text-decoration: underline;
-    text-underline-offset: 0.3em;
+    text-decoration-thickness: var(--underline-thickness);
+    text-underline-offset: var(--underline-offset);
   }
 }
 
@@ -161,7 +167,8 @@ h3 {
 
 .home-hero {
   display: grid;
-  min-block-size: 20rem;
+  grid-template-rows: minmax(0, 1fr);
+  block-size: var(--hero-height);
 }
 
 .home-hero > * {
@@ -278,7 +285,8 @@ h3 {
 }
 
 .hero {
-  height: 25rem;
+  inline-size: 100%;
+  block-size: var(--hero-height);
   object-fit: cover;
 }
 
@@ -386,13 +394,11 @@ h3 {
   padding: var(--space-medium);
   text-align: center;
   font-size: var(--font-size-small);
-  color: var(--color-text-muted);
+  color: var(--color-text-primary);
 
   & a {
     color: inherit;
-  }
-
-  & a:hover {
-    text-decoration-thickness: 0.2rem;
+    text-decoration-thickness: 0.15rem;
+    text-underline-offset: var(--underline-offset);
   }
 }
