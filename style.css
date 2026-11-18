@@ -23,6 +23,7 @@
   --palette-mauve: #9a8c98;
   --palette-rose: #c9ada7;
   --palette-rose-light: #e2d1cc;
+  --palette-rose-slight: #d8c8c4;
   --palette-cream: #f2e9e4;
 
   /* color tokens */
@@ -30,6 +31,7 @@
   --color-background-content: var(--palette-cream);
   --color-background-highlight: var(--palette-rose-light);
   --color-background-hover: var(--palette-rose-light);
+  --color-card-hover: var(--palette-rose-slight);
   --color-text-primary: var(--palette-navy);
   --color-text-heading: var(--palette-slate);
   --color-text-muted: var(--palette-slate);
@@ -221,7 +223,7 @@ h3 {
   border-radius: var(--radius-small);
 
   &:hover {
-    background-color: var(--palette-mauve);
+    background-color: var(--color-accent);
     color: var(--color-text-light);
   }
 }
@@ -247,11 +249,12 @@ h3 {
   padding: var(--space-small);
 
   &:hover {
-    border: 3px dashed var(--color-accent);
-    background-color: var(--color-background-content);
+    background-color: var(--color-card-hover);
   }
 
   &:focus-within {
+    border-color: var(--color-focus);
+    border-style: dashed;
     background-color: var(--color-background-content);
   }
 
