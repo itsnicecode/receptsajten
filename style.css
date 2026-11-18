@@ -88,6 +88,27 @@
   outline-offset: 0.3rem;
 }
 
+.skip-link {
+  position: fixed;
+  inset-block-start: var(--space-medium);
+  inset-inline-start: var(--space-medium);
+  z-index: 999;
+
+  padding: var(--space-small) var(--space-medium);
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  border-radius: var(--radius-small);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transform: translateY(-200%);
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
