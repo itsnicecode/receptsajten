@@ -316,6 +316,21 @@ h3 {
   section > * + * {
     margin-block-start: var(--space-flow);
   }
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-large);
+    row-gap: var(--space-section);
+
+    > section + section {
+      margin-block-start: 0;
+    }
+
+    > section:nth-of-type(3) {
+      grid-column: 1 / -1;
+    }
+  }
 }
 
 .ingredient-list {
