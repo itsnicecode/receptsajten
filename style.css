@@ -1,4 +1,4 @@
-/* fonts & design tokens */
+/* ~~~~~~~~~~ fonts ~~~~~~~~~~ */
 
 @font-face {
   font-family: "Chewy";
@@ -15,6 +15,8 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* ~~~~~~~~~~ design tokens ~~~~~~~~~~ */
 
 :root {
   /* palette */
@@ -49,31 +51,31 @@
   --underline-thickness: 0.18rem;
   --underline-offset: 0.3em;
 
+  /* focus */
+  --focus-outline-width: 0.15rem;
+  --focus-outline-offset: 0.3rem;
+
   /* spaces */
+  --space-xsmall: 0.25rem;
   --space-small: 0.7rem;
   --space-medium: 1rem;
   --space-large: 2rem;
-
   --space-page: clamp(var(--space-medium), 4vw, var(--space-large));
-
   --space-flow: var(--space-small);
   --space-section: var(--space-large);
-
   --radius-small: 0.375rem;
 
   /* font */
   --font-family-base: "Atkinson Hyperlegible", sans-serif;
   --font-family-heading: "Chewy", sans-serif;
-
   --font-size-small: 0.9rem;
   --font-size-medium: 1.2rem;
   --font-size-large: 1.5rem;
-
   --line-height-base: 1.6;
   --line-height-list: 2;
 }
 
-/* my little reset */
+/* ~~~~~~~~~~ reset ~~~~~~~~~~ */
 
 *,
 *::before,
@@ -83,39 +85,36 @@
   padding: 0;
 }
 
-:focus-visible {
-  outline: 0.15rem dashed var(--color-focus);
-  outline-offset: 0.3rem;
-}
-
-.skip-link {
-  position: fixed;
-  inset-block-start: var(--space-medium);
-  inset-inline-start: var(--space-medium);
-  z-index: 999;
-
-  padding: var(--space-small) var(--space-medium);
-  background-color: var(--color-accent);
-  color: var(--color-text-light);
-  border-radius: var(--radius-small);
-
-  text-decoration: none;
-  font-weight: bold;
-
-  transform: translateY(-200%);
-
-  &:focus-visible {
-    transform: translateY(0);
-  }
-}
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* visually-hidden rule from A11yproject's How To Hide Content */
+/* ~~~~~~~~~~ base styling ~~~~~~~~~~ */
+
+body {
+  background-color: var(--color-background-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-heading);
+  color: var(--color-text-heading);
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: var(--focus-outline-width) dashed var(--color-focus);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* ~~~~~~~~~~ accessibility ~~~~~~~~~~ */
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -128,14 +127,24 @@ img {
   border: 0;
 }
 
-/* global layout */
-
-body {
-  background-color: var(--color-background-page);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-base);
-  line-height: var(--line-height-base);
+.skip-link {
+  position: fixed;
+  inset-block-start: var(--space-medium);
+  inset-inline-start: var(--space-medium);
+  z-index: 999;
+  padding: var(--space-small) var(--space-medium);
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  border-radius: var(--radius-small);
+  text-decoration: none;
+  font-weight: bold;
+  transform: translateY(-200%);
+  &:focus-visible {
+    transform: translateY(0);
+  }
 }
+
+/* ~~~~~~~~~~ global layout ~~~~~~~~~~ */
 
 main,
 .site-header,
@@ -148,15 +157,7 @@ main {
   background-color: var(--color-background-content);
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-family-heading);
-  color: var(--color-text-heading);
-  text-wrap: balance;
-}
-
-/* header & navigation */
+/* ~~~~~~~~~~ header + navigation ~~~~~~~~~~ */
 
 .site-header {
   background-color: var(--color-background-content);
@@ -181,15 +182,12 @@ h3 {
   flex-wrap: wrap;
   gap: var(--space-large);
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .site-nav a {
   text-decoration: none;
   font-size: var(--font-size-medium);
   color: var(--color-text-heading);
-
   &:hover,
   &:focus-visible,
   &[aria-current="page"] {
@@ -199,7 +197,7 @@ h3 {
   }
 }
 
-/* homepage hero */
+/* ~~~~~~~~~~ homepage: hero ~~~~~~~~~~ */
 
 .home-hero {
   display: grid;
@@ -219,26 +217,23 @@ h3 {
 
 .home-hero-content {
   z-index: 1;
-  /* align-self: end; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--space-page);
   color: var(--color-text-light);
-
   background: linear-gradient(
     to top,
     rgb(from var(--palette-navy) r g b / 95%) 0%,
     rgb(from var(--palette-navy) r g b / 65%) 30%,
     transparent 95%
   );
-
   h1 {
     color: inherit;
   }
 }
 
-/* homepage categories */
+/* ~~~~~~~~~~ homepage: categories ~~~~~~~~~~ */
 
 .categories {
   padding: var(--space-page);
@@ -259,14 +254,13 @@ h3 {
   color: var(--color-text-primary);
   text-decoration: none;
   border-radius: var(--radius-small);
-
   &:hover {
     background-color: var(--color-accent);
     color: var(--color-text-light);
   }
 }
 
-/* homepage feature d recipes */
+/* ~~~~~~~~~~ homepage: featured recipes ~~~~~~~~~~ */
 
 .featured-recipes {
   padding: var(--space-page);
@@ -281,31 +275,26 @@ h3 {
 
 .recipe-card {
   background-color: var(--color-background-highlight);
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: var(--radius-small);
   overflow: hidden;
   padding: var(--space-small);
-
   &:hover {
     background-color: var(--color-card-hover);
   }
-
-  &:focus-within {
+  &:has(a:focus-visible) {
     border-color: var(--color-focus);
     border-style: dashed;
     background-color: var(--color-background-content);
   }
-
   a {
     display: block;
     color: inherit;
     text-decoration: none;
   }
-
   a:focus-visible {
     outline: none;
   }
-
   img {
     inline-size: 100%;
     aspect-ratio: 4 / 3;
@@ -314,30 +303,23 @@ h3 {
   }
 }
 
-/* recipe page layout & header */
+/* ~~~~~~~~~~ recipe: layout + header ~~~~~~~~~~ */
 
 .recipe {
   padding-block-end: var(--space-page);
-
   li {
     line-height: var(--line-height-list);
   }
-
-  li:has(:checked) {
-    text-decoration: line-through;
-    color: var(--color-text-muted);
-  }
 }
+
 .recipe-header {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-large);
   max-inline-size: var(--recipe-max-width);
   margin-inline: auto;
-
   padding-inline: var(--space-page);
   padding-block-end: var(--space-page);
-
   @media (min-width: 48rem) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
@@ -354,7 +336,6 @@ h3 {
 
 .recipe-header-content {
   min-inline-size: 0;
-
   h1 {
     font-size: var(--font-size-large);
   }
@@ -370,6 +351,8 @@ h3 {
   margin-block-start: var(--space-flow);
 }
 
+/* ~~~~~~~~~~ recipe: facts ~~~~~~~~~~ */
+
 .recipe-facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -378,33 +361,28 @@ h3 {
   color: var(--color-text-primary);
   border: 0.2em dashed var(--color-border);
   border-radius: var(--radius-small);
-
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
+    gap: var(--space-xsmall);
     padding: var(--space-small);
     text-align: center;
     min-inline-size: 0;
   }
-
   > div + div {
     border-inline-start: 1px solid var(--color-border);
   }
-
   dt {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--space-xsmall);
     font-size: var(--font-size-small);
     font-weight: bold;
   }
-
   dd {
-    margin: 0;
     font-size: var(--font-size-small);
     font-weight: bold;
   }
@@ -416,7 +394,6 @@ h3 {
   justify-content: center;
   inline-size: 2rem;
   block-size: 2rem;
-
   img,
   svg {
     inline-size: 100%;
@@ -424,33 +401,27 @@ h3 {
   }
 }
 
-/* recipe page content */
+/* ~~~~~~~~~~ recipe: content + lists ~~~~~~~~~~ */
 
 .recipe-content {
   padding-block-start: var(--space-section);
-
   > * + * {
     margin-block-start: var(--space-flow);
   }
-
   > section + section {
     margin-block-start: var(--space-section);
   }
-
   section > * + * {
     margin-block-start: var(--space-flow);
   }
-
   @media (min-width: 48rem) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: var(--space-large);
     row-gap: var(--space-section);
-
     > section + section {
       margin-block-start: 0;
     }
-
     > section:nth-of-type(3) {
       grid-column: 1 / -1;
     }
@@ -458,25 +429,32 @@ h3 {
 }
 
 .ingredient-list {
-  padding: 0;
   list-style: none;
-
+  li:has(input:checked) {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+  }
   label {
     display: flex;
     align-items: center;
     gap: var(--space-small);
-    /* padding-inline: var(--space-small); */
+    padding-block: 0.2rem;
     border-radius: var(--radius-small);
     cursor: pointer;
     transition: background-color 150ms ease;
-
+    &:has(input:focus-visible) {
+      outline: var(--focus-outline-width) dashed var(--color-focus);
+      outline-offset: var(--focus-outline-offset);
+    }
     input {
       flex-shrink: 0;
       inline-size: 1.5rem;
       block-size: 1.5rem;
       accent-color: var(--color-accent);
+      &:focus-visible {
+        outline: none;
+      }
     }
-
     @media (hover: hover) {
       &:hover {
         background-color: var(--color-background-hover);
@@ -487,31 +465,32 @@ h3 {
 
 .instructions-list {
   list-style-position: inside;
-
   li {
     text-wrap-style: balance;
   }
 }
 
+/* ~~~~~~~~~~ recipe: gallery ~~~~~~~~~~ */
+
 .recipe-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
   gap: var(--space-medium);
-
   img {
-    width: 100%;
+    inline-size: 100%;
     border-radius: var(--radius-small);
     aspect-ratio: 4 / 3;
     object-fit: cover;
   }
 }
 
+/* ~~~~~~~~~~ footer ~~~~~~~~~~ */
+
 .site-footer {
-  padding: var(--space-medium);
+  padding: var(--space-large);
   text-align: center;
   font-size: var(--font-size-small);
   color: var(--color-text-primary);
-
   & a {
     color: inherit;
     text-decoration-thickness: var(--underline-thickness);
