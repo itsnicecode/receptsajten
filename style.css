@@ -114,7 +114,7 @@ h3 {
 }
 
 /* ~~~~~~~~~~ accessibility ~~~~~~~~~~ */
-
+/* from a11yproject's "How To Hide Content" */
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
