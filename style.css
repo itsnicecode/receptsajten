@@ -57,7 +57,7 @@
 
   /* focus */
   --focus-outline-width: 0.15rem;
-  --focus-outline-offset: 0.3rem;
+  --focus-outline-offset: 0.2rem;
 
   /* spaces */
   --space-xsmall: 0.25rem;
@@ -72,9 +72,14 @@
   /* font */
   --font-family-base: "Atkinson Hyperlegible", sans-serif;
   --font-family-heading: "Chewy", sans-serif;
-  --font-size-small: 0.9rem;
-  --font-size-medium: 1.2rem;
-  --font-size-large: 1.5rem;
+  --font-size-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9rem);
+  --font-size-medium: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  --font-size-large: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+
+  --font-size-h1: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --font-size-h2: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --font-size-h3: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+
   --line-height-base: 1.6;
   --line-height-list: 2;
 }
@@ -104,6 +109,18 @@ body {
   line-height: var(--line-height-base);
 }
 
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
 h1,
 h2,
 h3 {
@@ -113,7 +130,7 @@ h3 {
 }
 
 :focus-visible {
-  outline: var(--focus-outline-width) solid var(--color-text-heading);
+  outline: var(--focus-outline-width) solid var(--color-focus);
   outline-offset: var(--focus-outline-offset);
 }
 
@@ -558,6 +575,7 @@ main {
 
     &:user-invalid {
       border: 0.15em solid var(--color-invalid);
+      border-style: dashed;
     }
   }
 
@@ -573,6 +591,7 @@ main {
   display: grid;
   gap: var(--space-medium);
   grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+  align-items: start;
 }
 
 /* ~~~~~~~~~~ recipe share: difficulty section ~~~~~~~~~~ */

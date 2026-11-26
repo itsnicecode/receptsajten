@@ -71,10 +71,15 @@
                 name="time"
                 id="time"
                 type="number"
+                inputmode="numeric"
                 min="1"
-                max="999"
+                max="9999"
+                aria-describedby="time-error"
                 placeholder="Ex. 60"
               />
+              <span class="form-error" id="time-error">
+                🛈 Ange en tillagningstid på minst 1 minut.
+              </span>
             </label>
             <label for="servings">
               Antal portioner
@@ -82,10 +87,15 @@
                 name="servings"
                 id="servings"
                 type="number"
+                inputmode="numeric"
                 min="1"
-                max="100"
+                max="9999"
+                aria-describedby="servings-error"
                 placeholder="Ex. 4"
               />
+              <span class="form-error" id="servings-error">
+                🛈 Ange åtminstone 1 portion
+              </span>
             </label>
           </div>
         </fieldset>
@@ -139,7 +149,7 @@
               required
             ></textarea>
             <span class="form-error" id="how-to-error">
-              🛈 Du måste beskriva hur man lagar receptet
+              🛈 Ett recept behöver instruktioner
             </span>
           </label>
         </fieldset>
