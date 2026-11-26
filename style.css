@@ -27,8 +27,8 @@
   --palette-rose-light: oklch(87.31% 0.02022 37.03);
   --palette-rose-slight: oklch(84.48% 0.01887 34.3);
   --palette-cream: oklch(93.97% 0.01189 51.32);
-  --palette-green: oklch(60% 0.15 150);
-  --palette-red: oklch(60% 0.15 25);
+  --palette-green: oklch(45% 0.09 150);
+  --palette-red: oklch(45% 0.15 25);
 
   /* color tokens */
   --color-background-page: var(--palette-rose);
@@ -228,8 +228,8 @@ main {
   color: var(--color-text-light);
   background: linear-gradient(
     to top,
-    rgb(from var(--palette-navy) r g b / 95%) 0%,
-    rgb(from var(--palette-navy) r g b / 65%) 30%,
+    oklch(from var(--palette-navy) l c h / 95%) 0%,
+    oklch(from var(--palette-navy) l c h / 65%) 30%,
     transparent 95%
   );
   h1 {
