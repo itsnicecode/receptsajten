@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dela ditt recept | Receptsajten</title>
+    <meta name="description" content="Dela ditt recept på Receptsajten" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/icons/favicon.ico" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
+
+    <header class="site-header">
+      <a href="index.html" class="site-logo">Receptsajten</a>
+
+      <nav aria-label="Huvudnavigation">
+        <ul class="site-nav">
+          <li>
+            <a href="index.html" aria-current="page">Hem</a>
+          </li>
+          <li>
+            <a href="pannkakor.html">Recept</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="recipe-share">
+      <h1 id="home-heading">Dela ditt recept</h1>
+      <p>Dela med dig av din favoriträtt och se ditt recept här på sajten.</p>
+
+      <form class="recipe-form">
+        <fieldset>
+          <legend><h2>Om receptet</h2></legend>
+          <label for="recipe-name">
+            Receptets namn *
+            <input
+              type="text"
+              name="recipe-name"
+              placeholder="Ex. Plankstek med fläskfilé"
+            />
+          </label>
+          <label for="recipe-category">
+            Kategori
+            <select name="category" id="recipe-category">
+              <option value="default">Välj kategori</option>
+              <option value="breakfast">Frukost</option>
+              <option value="fika">Fika</option>
+              <option value="lunch">Lunch</option>
+              <option value="starters">Förrätter</option>
+              <option value="dinner">Middag</option>
+              <option value="desserts">Efterrätter</option>
+            </select>
+          </label>
+          <label for="time">
+            Tid i minuter
+            <input
+              name="time"
+              type="number"
+              min="1"
+              max="999"
+              placeholder="Ex. 60"
+            />
+          </label>
+          <label for="servings">
+            Antal portioner
+            <input
+              name="servings"
+              type="number"
+              min="1"
+              max="100"
+              placeholder="Ex. 4"
+            />
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend><h2>Svårighetsgrad</h2></legend>
+          <div class="difficulty">
+            <input type="radio" name="difficulty" id="easy" />
+            <label for="easy">Lätt</label>
+
+            <input type="radio" name="difficulty" id="medium" />
+            <label for="medium">Medel</label>
+
+            <input type="radio" name="difficulty" id="hard" />
+            <label for="hard">Svår</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><h2>Ditt recept</h2></legend>
+          <label for="ingedients">Ingredienser *</label>
+          <textarea
+            name="ingredients"
+            id="ingredients"
+            placeholder="Ex. Lök, chili, nudlar.."
+          ></textarea>
+          <label for="how-to">Gör så här *</label>
+          <textarea
+            name="how-to"
+            id="how-to"
+            placeholder="Ex. Koka nudlarna enligt anvisning på paketet.."
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <legend><h2>Om dig</h2></legend>
+          <label for="your-name">Ditt namn</label>
+          <input
+            type="text"
+            name="your-name"
+            id="your-name"
+            placeholder="Ex. Maria Larsson"
+          />
+          <label for="your-email">E-post *</label>
+          <input
+            type="email"
+            name="your-email"
+            id="your-email"
+            placeholder="Ex. maria@mail.se"
+          />
+        </fieldset>
+
+        <button>Dela receptet</button>
+      </form>
+    </main>
+    <footer class="site-footer">
+      <p>
+        <a
+          href="https://unsplash.com/collections/dRdbSqqE9Jo/receptsajten/55cc9c4c289f804ef19763352f9e6303"
+          >Bildkällor</a
+        >. Typsnitt:
+        <a
+          href="https://fonts.google.com/specimen/Chewy?query=chewy&preview.script=Latn"
+          >Chewy</a
+        >,
+        <a
+          href="https://fonts.google.com/specimen/Atkinson+Hyperlegible?preview.script=Latn"
+          >Atkinson Hyperlegible</a
+        >. Ikoner: <a href="https://fonts.google.com/icons">Google Icons</a>
+      </p>
+    </footer>
+  </body>
+</html>

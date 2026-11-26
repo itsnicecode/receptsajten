@@ -484,6 +484,18 @@ main {
   }
 }
 
+/* ~~~~~~~~~~ recipe share: layout ~~~~~~~~~~ */
+
+.recipe-share {
+  padding: var(--space-page);
+}
+
+.recipe-form {
+  display: grid;
+  gap: var(--space-section);
+  margin-block-start: var(--space-medium);
+}
+
 /* ~~~~~~~~~~ footer ~~~~~~~~~~ */
 
 .site-footer {
