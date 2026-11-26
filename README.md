@@ -14,8 +14,7 @@ Fokus har legat på tillgänglighet, responsiv design, återanvändbar CSS och e
 - Formulär med inbyggd HTML-validering och visuell återkoppling i CSS
 - Gemensam navigation och footer
 - Anpassade hover- och fokuslägen
-
-> Formulärets validering sker helt genom HTML och CSS. Projektet saknar backend och recepten sparas eller publiceras därför inte.
+- `Formulärets validering sker helt genom HTML och CSS. Projektet saknar backend och recepten varken sparas eller publiceas`
 
 ## Testning
 
@@ -60,7 +59,7 @@ Projektet har testats med både automatiserade verktyg och manuell interaktion.
 - [x] Hover- och fokuslägen är tydliga(re).
 - [x] Uppdaterat färgschema, favicon, site manifest
 
-> Atkinson Hyperlegible: Utvecklat av Braille Institute i USA med syftet att göra enskilda bokstäver och tecken lättare att känna igen och skilja från varandra.
+- `Atkinson Hyperlegible: Utvecklat av Braille Institute i USA med syftet att göra enskilda bokstäver och tecken lättare att känna igen och skilja från varandra.`
 
 ## Checklista - Vecka 1
 
