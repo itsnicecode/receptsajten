@@ -230,8 +230,7 @@ main {
 
 .home-hero {
   display: grid;
-  grid-template-rows: minmax(0, 1fr);
-  block-size: var(--hero-height);
+  grid-template-rows: minmax(var(--hero-height), auto);
 }
 
 .home-hero > * {

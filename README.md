@@ -58,7 +58,7 @@ Projektet har testats med både automatiserade verktyg och manuell interaktion.
 - [x] Självhostade Google typsnitt (Chewy + Atkinson Hyperlegible)
 - [x] Ingredienslista använder :has() och stryks över när man bockar av dem.
 - [x] Hover- och fokuslägen är tydliga(re).
-- [x] Uppdaterat färgschema, favicon, site manifest
+- [x] Uppdaterat färgschema + favicon
 
 `Atkinson Hyperlegible: Utvecklat av Braille Institute i USA med syftet att göra enskilda bokstäver och tecken lättare att känna igen och skilja från varandra.`
 
