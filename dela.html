@@ -17,10 +17,15 @@
       <nav aria-label="Huvudnavigation">
         <ul class="site-nav">
           <li>
-            <a href="index.html" aria-current="page">Hem</a>
+            <a href="index.html">Hem</a>
           </li>
           <li>
             <a href="pannkakor.html">Recept</a>
+          </li>
+          <li>
+            <a href="dela.html" class="share-button" aria-current="page"
+              >Dela recept</a
+            >
           </li>
         </ul>
       </nav>
@@ -39,8 +44,12 @@
               name="recipe-name"
               id="recipe-name"
               placeholder="Ex. Grillad lax"
+              aria-describedby="recipe-name-error"
               required
             />
+            <span class="form-error" id="recipe-name-error">
+              🛈 Receptet behöver ett namn
+            </span>
           </label>
           <label for="recipe-category">
             Kategori
@@ -111,8 +120,12 @@
               name="ingredients"
               id="ingredients"
               placeholder="Ex. Lök, chili, nudlar.."
+              aria-describedby="ingredients-error"
               required
             ></textarea>
+            <span class="form-error" id="ingredients-error">
+              🛈 Ett recept behöver ingredienser
+            </span>
           </label>
 
           <label for="how-to"
@@ -121,8 +134,12 @@
               name="how-to"
               id="how-to"
               placeholder="Ex. Koka nudlarna enligt anvisning på paketet.."
+              aria-describedby="how-to-error"
               required
             ></textarea>
+            <span class="form-error" id="how-to-error">
+              🛈 Du måste beskriva hur man lagar receptet
+            </span>
           </label>
         </fieldset>
         <fieldset>
@@ -144,8 +161,12 @@
               name="your-email"
               id="your-email"
               placeholder="Ex. maria@mail.se"
+              aria-describedby="email-error"
               required
             />
+            <span class="form-error" id="email-error">
+              🛈 Ange en giltig e-postadress
+            </span>
           </label>
         </fieldset>
 

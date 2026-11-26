@@ -185,6 +185,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-large);
+  align-items: center;
   list-style: none;
 }
 
@@ -198,6 +199,13 @@ main {
     text-decoration: underline;
     text-decoration-thickness: var(--underline-thickness);
     text-underline-offset: var(--underline-offset);
+  }
+  &.share-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    padding: var(--space-xsmall) var(--space-medium);
+    border-radius: var(--radius-small);
   }
 }
 
@@ -538,7 +546,7 @@ main {
     font-weight: normal;
     color: var(--color-text-primary);
     background-color: var(--color-background-content);
-    border: 1px solid var(--color-accent);
+    border: 0.15em solid var(--color-accent);
     border-radius: var(--radius-small);
     padding: var(--space-small);
     inline-size: 100%;
@@ -587,6 +595,43 @@ main {
       accent-color: var(--color-accent);
       flex-shrink: 0;
       cursor: pointer;
+    }
+  }
+}
+
+/* ~~~~~~~~~~ recipe share: validation feedback ~~~~~~~~~~ */
+
+.recipe-form {
+  .form-error {
+    display: none;
+    color: var(--color-invalid);
+    font-size: var(--font-size-small);
+  }
+
+  label:has(:user-invalid) {
+    .form-error {
+      display: block;
+    }
+  }
+}
+
+/* ~~~~~~~~~~ recipe share: button ~~~~~~~~~~ */
+
+.recipe-form {
+  > button {
+    justify-self: start;
+    font: inherit;
+    font-weight: bold;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    padding: var(--space-small) var(--space-large);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-small);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-background-highlight);
+      color: var(--color-accent);
     }
   }
 }
