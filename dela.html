@@ -26,24 +26,26 @@
       </nav>
     </header>
     <main id="main-content" class="recipe-share">
-      <h1 id="home-heading">Dela ditt recept</h1>
+      <h1>Dela ditt recept</h1>
       <p>Dela med dig av din favoriträtt och se ditt recept här på sajten.</p>
 
       <form class="recipe-form">
         <fieldset>
-          <legend><h2>Om receptet</h2></legend>
+          <legend>Om receptet</legend>
           <label for="recipe-name">
             Receptets namn *
             <input
               type="text"
               name="recipe-name"
-              placeholder="Ex. Plankstek med fläskfilé"
+              id="recipe-name"
+              placeholder="Ex. Grillad lax"
+              required
             />
           </label>
           <label for="recipe-category">
             Kategori
             <select name="category" id="recipe-category">
-              <option value="default">Välj kategori</option>
+              <option value="">Välj kategori</option>
               <option value="breakfast">Frukost</option>
               <option value="fika">Fika</option>
               <option value="lunch">Lunch</option>
@@ -52,74 +54,102 @@
               <option value="desserts">Efterrätter</option>
             </select>
           </label>
-          <label for="time">
-            Tid i minuter
-            <input
-              name="time"
-              type="number"
-              min="1"
-              max="999"
-              placeholder="Ex. 60"
-            />
-          </label>
-          <label for="servings">
-            Antal portioner
-            <input
-              name="servings"
-              type="number"
-              min="1"
-              max="100"
-              placeholder="Ex. 4"
-            />
-          </label>
-        </fieldset>
-        <fieldset>
-          <legend><h2>Svårighetsgrad</h2></legend>
-          <div class="difficulty">
-            <input type="radio" name="difficulty" id="easy" />
-            <label for="easy">Lätt</label>
-
-            <input type="radio" name="difficulty" id="medium" />
-            <label for="medium">Medel</label>
-
-            <input type="radio" name="difficulty" id="hard" />
-            <label for="hard">Svår</label>
+          <div class="recipe-details">
+            <label for="time">
+              Tid i minuter
+              <input
+                name="time"
+                id="time"
+                type="number"
+                min="1"
+                max="999"
+                placeholder="Ex. 60"
+              />
+            </label>
+            <label for="servings">
+              Antal portioner
+              <input
+                name="servings"
+                id="servings"
+                type="number"
+                min="1"
+                max="100"
+                placeholder="Ex. 4"
+              />
+            </label>
           </div>
         </fieldset>
         <fieldset>
-          <legend><h2>Ditt recept</h2></legend>
-          <label for="ingedients">Ingredienser *</label>
-          <textarea
-            name="ingredients"
-            id="ingredients"
-            placeholder="Ex. Lök, chili, nudlar.."
-          ></textarea>
-          <label for="how-to">Gör så här *</label>
-          <textarea
-            name="how-to"
-            id="how-to"
-            placeholder="Ex. Koka nudlarna enligt anvisning på paketet.."
-          ></textarea>
+          <legend>Svårighetsgrad</legend>
+          <div class="difficulty">
+            <label for="easy"
+              ><input type="radio" name="difficulty" id="easy" value="easy" />
+              Lätt</label
+            >
+
+            <label for="medium"
+              ><input
+                type="radio"
+                name="difficulty"
+                id="medium"
+                value="medium"
+              />
+              Medel</label
+            >
+
+            <label for="hard"
+              ><input type="radio" name="difficulty" id="hard" value="hard" />
+              Svår</label
+            >
+          </div>
         </fieldset>
         <fieldset>
-          <legend><h2>Om dig</h2></legend>
-          <label for="your-name">Ditt namn</label>
-          <input
-            type="text"
-            name="your-name"
-            id="your-name"
-            placeholder="Ex. Maria Larsson"
-          />
-          <label for="your-email">E-post *</label>
-          <input
-            type="email"
-            name="your-email"
-            id="your-email"
-            placeholder="Ex. maria@mail.se"
-          />
+          <legend>Ditt recept</legend>
+          <label for="ingredients"
+            >Ingredienser *
+            <textarea
+              name="ingredients"
+              id="ingredients"
+              placeholder="Ex. Lök, chili, nudlar.."
+              required
+            ></textarea>
+          </label>
+
+          <label for="how-to"
+            >Gör så här *
+            <textarea
+              name="how-to"
+              id="how-to"
+              placeholder="Ex. Koka nudlarna enligt anvisning på paketet.."
+              required
+            ></textarea>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Om dig</legend>
+          <label for="your-name"
+            >Ditt namn
+            <input
+              type="text"
+              name="your-name"
+              id="your-name"
+              placeholder="Ex. Maria Larsson"
+            />
+          </label>
+
+          <label for="your-email"
+            >E-post *
+            <input
+              type="email"
+              name="your-email"
+              id="your-email"
+              placeholder="Ex. maria@mail.se"
+              required
+            />
+          </label>
         </fieldset>
 
-        <button>Dela receptet</button>
+        <button type="submit">Dela receptet</button>
       </form>
     </main>
     <footer class="site-footer">

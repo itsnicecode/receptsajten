@@ -20,13 +20,15 @@
 
 :root {
   /* palette */
-  --palette-navy: #22223b;
-  --palette-slate: #4a4e69;
-  --palette-mauve: #9a8c98;
-  --palette-rose: #c9ada7;
-  --palette-rose-light: #e2d1cc;
-  --palette-rose-slight: #d8c8c4;
-  --palette-cream: #f2e9e4;
+  --palette-navy: oklch(26.49% 0.04626 282.78);
+  --palette-slate: oklch(43.14% 0.04495 277.8);
+  --palette-mauve: oklch(65.62% 0.02395 330.46);
+  --palette-rose: oklch(77.03% 0.03383 32.1);
+  --palette-rose-light: oklch(87.31% 0.02022 37.03);
+  --palette-rose-slight: oklch(84.48% 0.01887 34.3);
+  --palette-cream: oklch(93.97% 0.01189 51.32);
+  --palette-green: oklch(60% 0.15 150);
+  --palette-red: oklch(60% 0.15 25);
 
   /* color tokens */
   --color-background-page: var(--palette-rose);
@@ -41,6 +43,8 @@
   --color-accent: var(--palette-slate);
   --color-focus: var(--palette-navy);
   --color-border: var(--palette-mauve);
+  --color-valid: var(--palette-green);
+  --color-invalid: var(--palette-red);
 
   /* layout */
   --content-max-width: 55rem;
@@ -494,6 +498,97 @@ main {
   display: grid;
   gap: var(--space-section);
   margin-block-start: var(--space-medium);
+}
+
+/* ~~~~~~~~~~ recipe share: fieldsets ~~~~~~~~~~ */
+
+.recipe-form {
+  legend {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-medium);
+    color: var(--color-text-heading);
+    padding-inline: var(--space-small);
+  }
+
+  fieldset {
+    background-color: var(--color-background-highlight);
+    border: 0.2em dashed var(--color-border);
+    border-radius: var(--radius-small);
+    padding: var(--space-medium);
+    min-inline-size: 0;
+    display: grid;
+    gap: var(--space-medium);
+  }
+}
+
+/* ~~~~~~~~~~ recipe share: form ~~~~~~~~~~ */
+
+.recipe-form {
+  > fieldset > label,
+  .recipe-details > label {
+    display: grid;
+    gap: var(--space-xsmall);
+    min-inline-size: 0;
+  }
+
+  input:not([type="radio"]),
+  select,
+  textarea {
+    font: inherit;
+    font-weight: normal;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-content);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-small);
+    padding: var(--space-small);
+    inline-size: 100%;
+    min-inline-size: 0;
+
+    &:user-valid {
+      border: 0.15em solid var(--color-valid);
+    }
+
+    &:user-invalid {
+      border: 0.15em dashed var(--color-invalid);
+    }
+  }
+
+  textarea {
+    min-block-size: 8rem;
+    resize: vertical;
+  }
+}
+
+/* ~~~~~~~~~~ recipe share: details ~~~~~~~~~~ */
+
+.recipe-details {
+  display: grid;
+  gap: var(--space-medium);
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+}
+
+/* ~~~~~~~~~~ recipe share: difficulty section ~~~~~~~~~~ */
+
+.difficulty {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-large);
+  align-items: center;
+
+  > label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-small);
+    cursor: pointer;
+
+    input {
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      accent-color: var(--color-accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+  }
 }
 
 /* ~~~~~~~~~~ footer ~~~~~~~~~~ */
