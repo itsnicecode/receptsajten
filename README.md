@@ -1,6 +1,6 @@
 # Receptsajten
 
-En responsiv receptsajt byggd med semantisk HTML och modern CSS. Projektet har utvecklats succesivt under fyra veckor, från en enkel receptsida till en sammanhängande webbplats med startsida, receptsida och formulär för att dela egna recept.
+En responsiv receptsajt byggd efter brief med semantisk HTML och modern CSS. Projektet har utvecklats succesivt under fyra veckor, från en enkel receptsida till en sammanhängande webbplats med startsida, receptsida och formulär för att dela egna recept.
 
 Fokus har legat på tillgänglighet, responsiv design, återanvändbar CSS och ett konsekvent designsystem, helt utan Javascript.
 
