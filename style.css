@@ -80,7 +80,7 @@
 }
 
 /* ~~~~~~~~~~ reset ~~~~~~~~~~ */
-/* delvis minimalt inspirerad av josh comeau "a modern css reset" */
+/* delvis (minimalt) inspirerad av josh comeau "a modern css reset" */
 *,
 *::before,
 *::after {
@@ -113,7 +113,7 @@ h3 {
 }
 
 :focus-visible {
-  outline: var(--focus-outline-width) dashed var(--color-focus);
+  outline: var(--focus-outline-width) solid var(--color-text-heading);
   outline-offset: var(--focus-outline-offset);
 }
 
@@ -296,7 +296,7 @@ main {
   }
   &:has(a:focus-visible) {
     border-color: var(--color-focus);
-    border-style: dashed;
+    border-style: solid;
     background-color: var(--color-background-content);
   }
   a {
@@ -371,7 +371,7 @@ main {
   margin-block-start: var(--space-medium);
   background-color: var(--color-background-highlight);
   color: var(--color-text-primary);
-  border: 0.2em dashed var(--color-border);
+  border: 0.2em solid var(--color-border);
   border-radius: var(--radius-small);
   > div {
     display: flex;
@@ -455,7 +455,7 @@ main {
     cursor: pointer;
     transition: background-color 150ms ease;
     &:has(input:focus-visible) {
-      outline: var(--focus-outline-width) dashed var(--color-focus);
+      outline: var(--focus-outline-width) solid var(--color-focus);
       outline-offset: var(--focus-outline-offset);
     }
     input {
@@ -520,7 +520,7 @@ main {
 
   fieldset {
     background-color: var(--color-background-highlight);
-    border: 0.2em dashed var(--color-border);
+    border: 0.2em solid var(--color-border);
     border-radius: var(--radius-small);
     padding: var(--space-medium);
     min-inline-size: 0;
@@ -557,7 +557,7 @@ main {
     }
 
     &:user-invalid {
-      border: 0.15em dashed var(--color-invalid);
+      border: 0.15em solid var(--color-invalid);
     }
   }
 
