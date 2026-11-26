@@ -80,7 +80,7 @@
 }
 
 /* ~~~~~~~~~~ reset ~~~~~~~~~~ */
-
+/* delvis minimalt inspirerad av josh comeau "a modern css reset" */
 *,
 *::before,
 *::after {
